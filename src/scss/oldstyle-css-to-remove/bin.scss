@@ -1,0 +1,25 @@
+//since i dont know scss, 
+//put all classes here (of corse, temporarily)
+
+//logo
+
+.heading-logo {
+   display: flex;
+}
+
+.heading-logo__cucumber {
+   position: relative;
+   top: 1px;
+
+   width: 5px;
+   height: 16px;
+   margin-left: 33px; 
+
+   background: #00FF57;
+   border-radius: 5px;
+   transform: rotate(19deg);
+}
+
+.heading-logo__cucumber:not(:first-child) {
+   margin-left: 4px;
+}
