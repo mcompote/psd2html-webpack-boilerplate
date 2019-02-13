@@ -1,3 +1,18 @@
 .font {
     font-size: 20px;
 }
+
+// import DEFAULT font from /assets/fonts/ folder 
+// $defaultFont should be defined in /variables/font.scss
+@font-face {
+    font-family: $defaultFont;
+    font-weight: 400;
+    src:  local($defaultFont),
+          local(str-remove-whitespace($defaultFont))
+    //FIXME: ADD FUNCTION
+        //   local('Proxima-Nova'),
+          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff2') format('woff2'),
+          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff') format('woff'),
+          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.ttf') format('truetype');
+}
+    

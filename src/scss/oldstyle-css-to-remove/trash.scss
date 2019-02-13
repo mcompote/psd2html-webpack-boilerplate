@@ -1,0 +1,53 @@
+body {
+   max-width: 1440px;   
+   margin: 0 auto;
+
+   font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
+   font-weight: 400;
+}
+
+//heading block
+.heading {
+   background: linear-gradient(121.88deg, #00B3FF -0.35%, #8F00FF 100%);
+   
+   &.heading_landing {
+      min-height: 900px;
+   }
+}
+
+
+.heading__row {
+   padding-left: 146.5px;
+   padding-right: 146.5px;
+   
+   &_menu {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      
+      background: yellowgreen;//FIXME: remove lately
+   }
+}
+
+
+//logo block
+.heading-logo {
+   display: flex;
+}
+
+.heading-logo__cucumber {
+   position: relative;
+   top: 1px;
+
+   width: 5px;
+   height: 16px;
+   margin-left: 33px; 
+
+   background: #00FF57;
+   border-radius: 5px;
+   transform: rotate(19deg);
+}
+
+.heading-logo__cucumber:not(:first-child) {
+   margin-left: 4px;
+}

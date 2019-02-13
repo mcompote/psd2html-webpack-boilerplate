@@ -1,4 +1,7 @@
 @import "variables/media";
+@import "variables/font";
+
+@import "functions/string-functions.scss";
 
 @import "mixin/media";
 
@@ -8,11 +11,13 @@
 
 @import "modifier/margin";
 
-@import 'base/base';
 @import 'base/fonts';
+@import 'base/base';
 
 @import 'module/cat';
 
+
+
 //FIXME: remove lately
-@import 'oldstyle-css-to-remove/bin.scss'
+@import 'oldstyle-css-to-remove/trash.scss'
 
