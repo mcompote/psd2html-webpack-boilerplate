@@ -18,12 +18,17 @@ body {
 .heading__row {
    padding-left: 146.5px;
    padding-right: 146.5px;
+   padding-top: 35px;
    
    &_menu {
       @include flx-r-sb-st();
       font-size: 16px;
 
       background: yellowgreen;//FIXME: remove lately
+   }
+
+   &_promo {
+      background: yellow;
    }
 }
 
@@ -61,15 +66,20 @@ body {
 .heading a:active {
    color: white;
    font-weight: bold;
+   text-decoration: none;
 }
 
 .heading-menu__list {
-   list-style: none;
-   display: flex;
-   padding: 0; //rewrite UA style
+   @include nolist();      //list-style: none
+   @include flx-r-st-st(); //display: flex
 }
 
 .heading-menu__item {
    color: rgba($color: #fff, $alpha: 0.7);
    border-bottom: 4px solid transparent; 
+
+   &:hover, &:active, &_active {
+      color: white;
+      border-bottom: 4px solid #33FF00;
+   }
 }
