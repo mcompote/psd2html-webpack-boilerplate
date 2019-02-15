@@ -17,4 +17,9 @@
    @include flx($axisDirection: row, $justifyContent: space-between, $alignItems: flex-start);
 }
 
+// flex-direction: row, justify-content: center, align-items: center
+@mixin flx-r-c-c {
+   @include flx($axisDirection: row, $justifyContent: center, $alignItems: center);
+}
+
 

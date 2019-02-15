@@ -28,6 +28,7 @@ body {
    }
 
    &_promo {
+      @include flx-r-st-st();
       background: yellow;
    }
 }
@@ -61,32 +62,38 @@ body {
    color: white;
 }
 
-.heading a, 
-.heading a:visited,
-.heading a:active {
+.link-phone, 
+.link-phone:visited,
+.link-phone:active {
    color: white;
-   font-weight: bold;
+    font-weight: bold;
    text-decoration: none;
 }
+
+
 
 .heading-menu__list {
    @include nolist();      //list-style: none
    @include flx-r-st-st(); //display: flex
 }
 
-
 .heading-menu__item {
-   color: rgba($color: #fff, $alpha: 0.7);
-   border-bottom: 4px solid transparent; 
-
-   &:hover, &:active, &_active {
-      color: white;
-      border-bottom: 4px solid #33FF00;
+   &, a {
+      text-decoration: none;
+      color: rgba($color: #fff, $alpha: 0.7);
+      border-bottom: 4px solid transparent; 
+   
+      &:hover, &:active, &_active {
+         color: white;
+         border-bottom: 4px solid #33FF00;
+      }
    }
 }
 
 
 
+
+
 .heading__row_promo {
-   
+
 }

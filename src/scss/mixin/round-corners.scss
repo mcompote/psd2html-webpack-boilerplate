@@ -1,0 +1,7 @@
+@mixin round_block($bRadius) {
+   border-radius: $bRadius;
+}
+
+@mixin circle {
+   @include round_block(50%);
+}

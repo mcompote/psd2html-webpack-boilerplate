@@ -1,0 +1,51 @@
+.btn {
+   display: block;
+   cursor: pointer;
+   border: none;
+}
+
+.btn-circle {
+   @include round_block(50%);
+}
+
+//TODO: No use for it, remove lately
+@for $i from 1 through 20 {
+   .btn-rounded--#{$i*5.0} { 
+      @include round_block( percentage($i*5.0/100) );
+   }
+}
+
+//yellow to green painted button
+.btn-colorized-y2g {
+  @include colorize_y2g();
+}
+
+//blue to violet painted button
+.btn-colorized-b2v {
+  @include colorize_b2v();
+}
+
+.btn-orig {
+   @extend .btn;
+   @include set_width_height(216px, 46px);
+   @include round_block(600px);
+   @include flx-r-c-c();       //flexbox, align - center
+
+   line-height: 24px;
+   font-size: 16px;
+   font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
+}
+
+.btn-orig-y2g {
+   @extend .btn-orig;
+   @extend .btn-colorized-y2g; //from yellow to green
+   color: #162E0E;
+}
+
+.btn-orig-b2v {
+   @extend .btn-orig;
+   @extend .btn-colorized-b2v; //from blue to violet
+   color: white;
+}
+
+

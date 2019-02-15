@@ -1,0 +1,14 @@
+@mixin colorize_bg($args...) {
+   background: linear-gradient($args);
+}
+
+//yellow to green linear gradient
+@mixin colorize_y2g {
+   @include colorize_bg(263.24deg, #33FF00 3.17%, #CCFF00 99.06%); 
+}
+
+//blue to violet linear gradient
+@mixin colorize_b2v {
+   @include colorize_bg(151.28deg, #00B3FF -0.35%, #8F00FF 100%); 
+}
+

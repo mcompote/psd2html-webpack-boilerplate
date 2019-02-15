@@ -6,6 +6,9 @@
 @import "mixin/media";
 @import "mixin/flexbox";
 @import "mixin/nolist";
+@import "mixin/round-corners";
+@import "mixin/color";
+@import "mixin/dimensions";
 
 @import "util/grid";
 
@@ -17,7 +20,7 @@
 @import 'base/base';
 
 @import 'module/cat';
-
+@import 'module/button';
 
 
 //FIXME: remove lately

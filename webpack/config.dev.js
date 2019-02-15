@@ -3,6 +3,7 @@ const fs = require('fs');
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// // // const fileLoader = require('file-loader');
 
 const getPlugins = () => {
     const plugins = [
@@ -95,9 +96,21 @@ module.exports = {
                     },
                 ],
             },
+
+            // // // //added jpeg/png/gif handler
+            // // // {
+            // // //     test: /\.(png|jpg|gif)$/,
+            // // //     use: [
+            // // //         {
+            // // //             loader: 'file-loader',
+            // // //             options: {},
+            // // //         },
+            // // //     ],
+            // // // },
+
         ],
     },
     resolve: {
-        extensions: ['.js', '.jpg', '.html', '.scss'],
+        extensions: ['.js', '.jpg', '.png', '.html', '.scss'],
     },
 };
