@@ -1,0 +1,20 @@
+
+@mixin flx($axisDirection, $justifyContent, $alignItems) {
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: $axisDirection;
+   justify-content: $justifyContent;
+   align-items: $alignItems;
+}
+
+// flex-direction: row, justify-content: flex-start, align-items: flex-start
+@mixin flx-r-st-st {
+   @include flx($axisDirection: row, $justifyContent: flex-start, $alignItems: flex-start);
+}
+
+// flex-direction: row, justify-content: space-between, align-items: flex-start
+@mixin flx-r-sb-st {
+   @include flx($axisDirection: row, $justifyContent: space-between, $alignItems: flex-start);
+}
+
+

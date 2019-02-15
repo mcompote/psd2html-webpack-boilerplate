@@ -1,9 +1,10 @@
 @import "variables/media";
 @import "variables/font";
 
-@import "functions/string-functions.scss";
+@import "functions/string-functions";
 
 @import "mixin/media";
+@import "mixin/flexbox";
 
 @import "util/grid";
 

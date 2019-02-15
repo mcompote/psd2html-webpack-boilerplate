@@ -3,7 +3,6 @@ body {
    margin: 0 auto;
 
    font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
-   font-weight: 400;
 }
 
 //heading block
@@ -21,10 +20,9 @@ body {
    padding-right: 146.5px;
    
    &_menu {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      
+      @include flx-r-sb-st();
+      font-size: 16px;
+
       background: yellowgreen;//FIXME: remove lately
    }
 }
@@ -33,21 +31,45 @@ body {
 //logo block
 .heading-logo {
    display: flex;
+
+   &__cucumber {
+      position: relative;
+      top: 1px;
+      
+      width: 5px;
+      height: 16px;
+      margin-left: 33px; 
+      
+      background: #00FF57;
+      border-radius: 5px;
+      transform: rotate(19deg);
+
+      &:not(:first-child) {
+         margin-left: 4px;
+      }
+   }
 }
 
-.heading-logo__cucumber {
-   position: relative;
-   top: 1px;
 
-   width: 5px;
-   height: 16px;
-   margin-left: 33px; 
 
-   background: #00FF57;
-   border-radius: 5px;
-   transform: rotate(19deg);
+.heading {
+   color: white;
 }
 
-.heading-logo__cucumber:not(:first-child) {
-   margin-left: 4px;
+.heading a, 
+.heading a:visited,
+.heading a:active {
+   color: white;
+   font-weight: bold;
+}
+
+.heading-menu__list {
+   list-style: none;
+   display: flex;
+   padding: 0; //rewrite UA style
+}
+
+.heading-menu__item {
+   color: rgba($color: #fff, $alpha: 0.7);
+   border-bottom: 4px solid transparent; 
 }
