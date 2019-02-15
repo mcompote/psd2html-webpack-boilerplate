@@ -9,7 +9,7 @@
     font-weight: 400;
     src:  local($defaultFont),
           local(str-remove-whitespace($defaultFont))
-    //FIXME: ADD FUNCTION
+    //TODO: ADD FUNCTION CAMEL2DASHES
         //   local('Proxima-Nova'),
           url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff2') format('woff2'),
           url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff') format('woff'),

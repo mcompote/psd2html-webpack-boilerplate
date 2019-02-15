@@ -18,10 +18,11 @@ body {
 .heading__row {
    padding-left: 146.5px;
    padding-right: 146.5px;
-   padding-top: 35px;
+
    
    &_menu {
       @include flx-r-sb-st();
+      padding-top: 35px;
       font-size: 16px;
 
       background: yellowgreen;//FIXME: remove lately
@@ -29,7 +30,7 @@ body {
 
    &_promo {
       @include flx-r-st-st();
-      background: yellow;
+      background: magenta;
    }
 }
 
@@ -91,9 +92,3 @@ body {
 }
 
 
-
-
-
-.heading__row_promo {
-
-}

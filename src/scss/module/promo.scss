@@ -1,7 +1,26 @@
-promo__description {
-   promo__heading {
-      font-size: 64px;
+.promo {
+   @include flx-r-st-st();
+}
+
+
+.promo__info {
+   box-shadow: 0px 0px 0px 1px rgba(random(), random(), random(), 1); //TODO: remove lately
+
+   .promo__heading {
+      margin: 0;
       line-height: 66px;
+      font-size: 64px;
+      font-style: italic;
       text-transform: uppercase;
    }
+
+   .promo__description {
+      color: #CDD7FD;
+   }
+}
+
+.promo__photo {
+   box-shadow: 0px 0px 0px 1px rgba(random(), random(), random(), 1); //TODO:remove lately
+
+   
 }

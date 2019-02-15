@@ -1,3 +1,7 @@
+@import "../mixin/round-corners.scss";
+@import "../mixin/plus-sign.scss";
+@import "../mixin/color.scss";
+
 .btn {
    display: block;
    cursor: pointer;
@@ -5,14 +9,7 @@
 }
 
 .btn-circle {
-   @include round_block(50%);
-}
-
-//TODO: No use for it, remove lately
-@for $i from 1 through 20 {
-   .btn-rounded--#{$i*5.0} { 
-      @include round_block( percentage($i*5.0/100) );
-   }
+   @include circle();
 }
 
 //yellow to green painted button
@@ -25,7 +22,7 @@
   @include colorize_b2v();
 }
 
-.btn-orig {
+.btn-original {
    @extend .btn;
    @include set_width_height(216px, 46px);
    @include round_block(600px);
@@ -36,16 +33,42 @@
    font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
 }
 
+//button 'Order NOW' yellow-gren in <header>
 .btn-orig-y2g {
-   @extend .btn-orig;
+   @extend .btn-original;
    @extend .btn-colorized-y2g; //from yellow to green
    color: #162E0E;
 }
 
+//button 'Order NOW' blue-violet in popup
 .btn-orig-b2v {
-   @extend .btn-orig;
+   @extend .btn-original;
    @extend .btn-colorized-b2v; //from blue to violet
    color: white;
 }
+
+//circle button 'ADD TO BAG' in <header>
+.btn-circle-y2g {
+   @extend .btn;
+   @extend .btn-circle;
+   @extend .btn-colorized-y2g;
+   @include set_width_height(78px, 78px);
+   @include plus_at_center(18px, 2.5px, 10px, #162E0E);
+}
+
+//circle purple button in popup
+.btn-circle-purple {
+   @extend .btn;
+   @extend .btn-circle;
+   @include fill(#8F00FF);
+   @include set_width_height(36px, 36px);
+   @include plus_at_center(11px, 1.5px, 10px, #fff);
+}
+
+
+
+
+
+
 
 

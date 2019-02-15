@@ -1,3 +1,7 @@
+@mixin fill($color) {
+   background: $color;
+}
+
 @mixin colorize_bg($args...) {
    background: linear-gradient($args);
 }
@@ -11,4 +15,5 @@
 @mixin colorize_b2v {
    @include colorize_bg(151.28deg, #00B3FF -0.35%, #8F00FF 100%); 
 }
+
 

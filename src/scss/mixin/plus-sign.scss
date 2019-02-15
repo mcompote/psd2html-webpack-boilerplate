@@ -1,0 +1,30 @@
+@import './round-corners';
+
+@mixin plus_at_center($w, $h, $r, $color) {
+
+   & {
+      position: relative;
+   }
+
+   &::before,
+   &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+      @include round_block($r);
+
+      width: $w;
+      height: $h;
+      background: $color;
+   }
+
+   &::before {
+      transform: translate(-50%, -50%);
+   }
+   &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+   }  
+}
