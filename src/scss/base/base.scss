@@ -1,3 +1,5 @@
+@import '../variables/font.scss';
+
 html {
     box-sizing: border-box;
     outline: none;
@@ -16,7 +18,10 @@ img {
  }
 
 body {
-    min-width: 1440px;
+    max-width: 1440px;   
+    margin: 0 auto;
+
+    font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
 }
 
 /* visible to a screen reader, but visually hidden */

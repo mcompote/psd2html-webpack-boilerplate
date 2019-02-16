@@ -1,0 +1,19 @@
+@import '../../mixin/flexbox.scss';
+@import '../cucumber.scss';
+
+//logo block
+.heading-logo {
+   @include flx-r-st-st();//flexbox default settings
+
+   &__cucumber {
+      @extend .cucumber-sm;
+
+      position: relative;
+      top: 1px;
+      margin-left: 33px; 
+      
+      &:not(:first-child) {
+         margin-left: 4px;
+      }
+   }
+}

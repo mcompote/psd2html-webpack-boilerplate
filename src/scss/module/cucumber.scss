@@ -1,0 +1,43 @@
+@import '../mixin/dimensions.scss';
+@import '../mixin/color.scss';
+@import '../mixin/round-corners.scss';
+
+@mixin cucumber($width, $height) {
+   @include set_width_height($width, $height);
+   @include round_block(600px);
+   transform: rotate(19deg);
+}
+
+@mixin cucumber_fill($width, $height, $color) {
+   @include cucumber($width, $height);
+   @include fill($color);
+}
+
+@mixin cucumber_grad($width, $height, $lg...) {
+   @include cucumber($width, $height);
+   // &::after {
+   //    content: quote(length($list: $lg)); 
+   // }
+   // @include colorize_bg(unquote($lg))
+   background: $lg;
+}
+
+
+.cucumber-sm {
+   @include cucumber_fill(5px, 16px, #00FF57);
+}
+
+.cucumber-lg-l {
+   @include cucumber_grad(280px, 406px, linear-gradient(to bottom, #A068E1 3.17%, #715CDE 99.06%) );
+}
+
+.cucumber-lg-c {
+   @include cucumber_grad(280px, 406px, linear-gradient(to bottom, #8372EB 3.17%, #8761E0 99.06%) );
+}
+
+.cucumber-lg-r {
+   @include cucumber_grad(280px, 406px, linear-gradient(to bottom, #986DEB 3.17%, #A268E1 99.06%) );
+}
+
+
+
