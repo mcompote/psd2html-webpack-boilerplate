@@ -1,8 +1,9 @@
 //heading block
 .heading {
    background: linear-gradient(121.88deg, #00B3FF -0.35%, #8F00FF 100%);
+   color: white;
    
-   &.heading_landing {
+   &.heading_index {
       min-height: 900px;
    }
 }
@@ -23,14 +24,12 @@
 
    &_promo {
       @include flx-r-st-st();
-      background: magenta;
+      position: relative; //for cucumbers
+      // background: rgba(255, 100, 100, 0.3);  //TODO: REMOVE LATELY
    }
 }
 
 
-.heading {
-   color: white;
-}
 
 .link-phone, 
 .link-phone:visited,
@@ -42,7 +41,6 @@
    letter-spacing: 0.05em;
    text-transform: uppercase;
 }
-
 
 
 .heading-menu__list {
@@ -64,3 +62,30 @@
 }
 
 
+.heading__cucumbers {
+   position: absolute;
+   right: 0;
+   @include flx-r-st-st();
+
+   & [class^="cucumber"]  {
+      margin-right: 40px;
+   }
+}
+
+
+.promo__photo {
+   z-index: 2; //overlay cucumbers completely!
+
+   & .add-to-bag {
+      margin: 0;
+      padding: 0;
+      line-height: 17px;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+   }
+
+   & .add-to-bag_underlined {
+      @include bottom_line(40px, 2px, #33FF00, -5px);
+   }
+}

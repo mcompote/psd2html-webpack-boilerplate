@@ -1,0 +1,17 @@
+@import './mixin/abs-shift.scss';
+@import './mixin/color.scss';
+
+@mixin bottom_line($lineWidth, $lineHeight, $lineColor, $shiftBottom) {
+   & {
+      position: relative;
+   }
+
+   &:after {
+      display: block;
+      content: '';
+      width: $lineWidth;
+      height: $lineHeight;
+      @include fill($lineColor);
+      @include shift_bottom($shiftBottom);
+   }
+}

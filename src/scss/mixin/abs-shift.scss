@@ -1,0 +1,34 @@
+
+@mixin shift_top($top) {
+   position: absolute;
+   top: $top;
+}
+
+@mixin shift_bottom($bottom) {
+   position: absolute;
+   bottom: $bottom;
+}
+
+@mixin shift_top_left($top, $left) {
+   position: absolute;
+   top: $top;
+   left: $left;
+}
+
+@mixin shift_top_right($top, $right) {
+   position: absolute;
+   top: $top;
+   right: $right;
+}
+
+@mixin shift_bottom_left($bottom, $left) {
+   position: absolute;
+   bottom: $bottom;
+   left: $left;
+}
+
+@mixin shift_bottom_right($bottom, $right) {
+   position: absolute;
+   bottom: $bottom;
+   right: $right;
+}
