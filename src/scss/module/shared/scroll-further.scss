@@ -1,0 +1,11 @@
+.scroll-further {
+   p {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+   }
+
+   svg {
+      width: 100px;
+      height: 100px;
+   }
+}

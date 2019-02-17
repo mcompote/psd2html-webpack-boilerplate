@@ -1,6 +1,6 @@
-@import "../mixin/round-corners.scss";
-@import "../mixin/plus-sign.scss";
-@import "../mixin/color.scss";
+@import "../../mixin/round-corners.scss";
+@import "../../mixin/plus-sign.scss";
+@import "../../mixin/color.scss";
 
 .btn {
    display: block;
@@ -32,7 +32,6 @@
    font-size: 16px;
    font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
 }
-
 
 
 //button 'Order NOW' yellow-gren in <header>

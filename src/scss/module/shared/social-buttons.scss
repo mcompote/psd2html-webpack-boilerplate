@@ -1,0 +1,52 @@
+@import '../../mixin/flexbox.scss';
+@import './button.scss';
+
+.social {   
+   @include flx-r-st-c();
+   width: 300px;
+   min-height: 20px;
+}
+
+.btn-social {
+   @extend .btn;
+   min-width: 10px;
+   min-height: 10px;
+   margin-right: 29px;
+
+   &:last-child {
+      margin-left: -6px;
+      margin-right: 0px;
+   }
+
+   &:hover {
+      opacity: 0.7;
+   }
+
+   &:active {
+      opacity: 0.3;
+   }
+
+   &.btn-social_vk {
+      width: 23px;
+      height: 12px;  
+      background: url('assets/svg/social/social-vk.svg');
+   }
+   
+   &.btn-social_fb {
+      width: 8px;
+      height: 16px;  
+      background: url('/assets/svg/social/social-fb.svg');
+   }
+   
+   &.btn-social_tw {
+      width: 22px;
+      height: 18px;  
+      background: url('/assets/svg/social/social-tw.svg');
+   }
+   
+   &.btn-social_insta {
+      width: 20px;
+      height: 20px;  
+      background: url('/assets/svg/social/social-insta.svg');
+   }
+}
