@@ -1,11 +1,23 @@
+@import '../../mixin/flexbox.scss';
+
 .scroll-further {
-   p {
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
+   @include flx-c-st-c();
+
+   &__text {
+      width: 74px;
+      height: 34px;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transform: rotate(270deg);
+      margin: 0px;
+      margin-bottom: 42px;
    }
 
-   svg {
-      width: 100px;
-      height: 100px;
+   &__svg {
+      width: 26px;
+      height: 44px;
+      background: url('/assets/svg/scroll-further.svg');
    }
 }
