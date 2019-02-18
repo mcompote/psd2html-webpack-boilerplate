@@ -24,6 +24,11 @@ body {
     font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
 }
 
+.main {
+    background: white;
+    color: black;
+}
+
 /* visible to a screen reader, but visually hidden */
 .visually-hidden {
     display: block;
