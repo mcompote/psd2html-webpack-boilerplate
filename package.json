@@ -14,7 +14,8 @@
     "author": "izica <artemiztomska@gmail.com>",
     "license": "MIT",
     "dependencies": {
-        "jquery": "^3.3.1"
+        "jquery": "^3.3.1",
+        "lory.js": "^2.5.3"
     },
     "devDependencies": {
         "@babel/core": "^7.2.2",

@@ -2,3 +2,40 @@
    width: $width;
    height: $height;
 }
+
+@mixin set_width_mHeight($width, $mHeight) {
+   width: $width;
+   min-height: $mHeight;
+}
+
+@mixin set_mWidth_height($mWidth, $height) {
+   min-width: $mWidth;
+   height: $height;
+}
+
+@mixin set_mWidth_mHeight($mWidth, $mHeight) {
+   min-width: $mWidth;
+   min-height: $mHeight;
+}
+
+@mixin set_w_h($width, $height) {
+   @include set_width_height($width, $height);
+}
+
+@mixin set_w_mH($width, $mHeight) {
+   @include set_width_mHeight($width, $mHeight)
+}
+
+@mixin set_mW_h($mWidth, $height) {
+   @include set_mWidth_height($mWidth, $height );
+}
+
+@mixin set_mW_mH($mWidth, $mHeight) {
+   @include set_mWidth_mHeight($mWidth, $mHeight);
+}
+
+
+
+@mixin square($sideWidth) {
+   @include set_width_height($sideWidth, $sideWidth);
+}
