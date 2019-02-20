@@ -1,0 +1,51 @@
+@import '../../functions/strip-unit.scss';
+
+@import '../../mixin/abs-shift.scss';
+@import '../../mixin/dimensions.scss';
+@import '../../mixin/round-corners.scss';
+@import '../../mixin/color.scss';
+@import '../shared/button.scss';
+
+@mixin btn-close($size, $color) {
+
+   @extend .btn;
+   @include square($size);
+   @include shift_top_right($size, $size);
+   transform: translate(-50%, -50%);
+
+   $number_hypotenuse : (strip_unit($size) * 1.41421);
+   $number_leftShift : ((strip_unit($number_hypotenuse) - strip_unit($size)) * 1.0 / 2.0);
+
+   &::before, &::after {
+      $current : &;
+
+      @extend .btn;
+      @include set_w_h( $number_hypotenuse+unquote("px"), 1px);
+      @include round_block(100px);
+      @include fill($color);
+      content:'';
+
+      position: absolute;
+      top: calc(50% - 1px);
+      left: (-1.0 * $number_leftShift)+unquote("px");
+      transform: rotate(45deg);
+   }
+
+   &::after {
+      transform: rotate(-45deg);
+   }
+
+   &:hover::after, &:hover::before {
+      background: darken($color, $amount: 10%);
+   }
+
+   &:active::after, &:active::before {
+      background: darken($color, $amount: 20%);
+   }
+}
+
+.btn-close_18px_grey {
+   @include btn-close(18px, #ccc );
+   background: transparent;
+   font-size: 0;
+}

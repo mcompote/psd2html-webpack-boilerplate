@@ -1,4 +1,31 @@
 <footer>
-   <!-- TODO: здесь живут POPUP's -->
-   Take heroin, don't cough
+  
+
+   <form class="form-ordernow" id="ordernow" action="/ordernow" method="post" enctype="multipart/form-data">
+         <button class="btn-close_18px_grey"></button>
+         <h2>Оформить заказ</h2>
+
+         <label class="visually-hidden" for="ordernow__name">Введите Ваше имя или телефон</label>
+         <input class="form-ordernow__name" id="ordernow__name" type="text" name="ordernow__nameOrPhone" placeholder="Ваш телефон" required>
+
+         <label for="ordernow__email" class="visually-hidden">Введите ваш email</label>
+         <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+         
+         <select name="hui" id="hui">
+            <option value="NULL" selected>Ваш род деятельности</option>
+            <option value="Легкоатлет">Легкоатлет</option>
+            <option value="Боксер">Боксер</option>
+            <option value="Бодибилдер">Бодибилдер</option>
+         </select>
+
+         <div class="form-ordernow__file-decorative">
+            <label for="ordernow__file" class="visually-hidden">Выберите файл для загрузки</label>
+            <button class="btn-circle-purple"></button>
+            <input class="form-ordernow__file form-ordernow__file_hidden" id="ordernow__file" type="file" name="ordernow__file">
+         </div>
+
+         <button type="submit" value="Загрузить"></button>
+
+   </form>
+
 </footer>
