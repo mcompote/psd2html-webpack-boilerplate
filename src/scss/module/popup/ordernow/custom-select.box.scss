@@ -1,5 +1,7 @@
 @import '../../../modifier/visually-hidden.scss';
-
+@import '../../../mixin/abs-shift.scss';
+@import '../../../mixin/dimensions.scss';
+@import './form-input-like-element.scss';
 
  /* The container must be positioned relative: */
  .custom-select {
@@ -11,34 +13,60 @@
    }
 
    &__selected {
-     background-color: DodgerBlue;
+      position: relative;
+      @include form-input-like-element();
 
-     &:after {
-      position: absolute;
-      content: "";
-      top: 14px;
-      right: 10px;
-      width: 0;
-      height: 0;
-      border: 6px solid transparent;
-      border-color: #fff transparent transparent transparent;
+     &::after {
+        display: block;
+        content: '';
+        @include shift_top_right(21px, calc(18px + 6px));   
+        @include set_w_h(9.22px, 1px);
+        background: #7D8CC6;
+        transform: rotate(45deg);
+     }
+
+     &::before {
+      display: block;
+      content: '';
+      @include shift_top_right(21px, calc(18px + 0px));   
+      @include set_w_h(9.22px, 1px);
+      background: #7D8CC6;
+      transform: rotate(-45deg);      
      }
 
      /* Point the arrow upwards when the select box is open (active): */
-     &_active:after {
-      border-color: transparent transparent #fff transparent;
-      top: 7px;   
+     &_active {
+        &::before {
+         display: block;
+         content: '';
+         @include shift_top_right(21px, calc(18px + 6px));   
+         @include set_w_h(9.22px, 1px);
+         background: #7D8CC6;
+         transform: rotate(-45deg);
+        }
+
+        &::after {
+         display: block;
+         content: '';
+         @include shift_top_right(21px, calc(18px + 0px));   
+         @include set_w_h(9.22px, 1px);
+         background: #7D8CC6;
+         transform: rotate(45deg);    
+        }
      }
    }
    
     /* Style items (options): */
-   &__items {
+   &__items { 
       position: absolute;
-      background-color: DodgerBlue;
-      top: 100%;
+      top: calc(100% + 8px);
       left: 0;
       right: 0;
       z-index: 99;
+
+      @include form-input-like-element();
+      padding: 0;
+      border-radius: 10px;
 
       /* Hide the items when the select box is closed: */
       &_hide {
@@ -48,12 +76,19 @@
 
 
       /* style the items (options), including the selected item: */
-      &__selected, &__item {
+      &__item {
+         padding-top: 15px;
+         padding-left: 31px;
+         padding-right: 42px;
+         padding-bottom: 17px;
+         padding: 15px 42px 17px 31px;
 
-         color: #ffffff;
-         padding: 8px 16px;
+         line-height: 14px;
+         font-size: 14px;
+         color: #1D1B30;
+
          border: 1px solid transparent;
-         border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+         border-color: transparent transparent #D6DEFF transparent;
          cursor: pointer;
       }
 
