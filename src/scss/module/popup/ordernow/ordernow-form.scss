@@ -1,9 +1,41 @@
+@import '../../../mixin/round-corners.scss';
+@import '../../../util/grid.scss';
+@import '../ordernow/custom-select.box.scss';
+@import './form-input-like-element.scss';
+
+
+
 .form-ordernow {
+   @extend .grid-col--5;
    background: cornflowerblue; //TODO: remove lately
    border: 1px solid salmon; 
-   position: relative;
+   padding: 56px 102px;
+   @include round_block(5px);
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   & &__heading {
+      line-height: 25px;
+      font-size: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #000000;
+      font-style: italic;
+
+      margin-bottom: 40px;
+   }
 
    & &__name {
+      @include form-input-like-element();
+   }
 
+   & &__email {
+      @include form-input-like-element();
+   }
+   
+   & &__occupation {
+      @include form-input-like-element();
    }
 }

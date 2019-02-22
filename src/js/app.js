@@ -2,6 +2,7 @@ import $ from 'jquery';
 import { lory } from 'lory.js';
 import './module/cat';
 import { onTextChanged } from './lib/text-formatting';
+import { init as customSelect_Init} from './lib/custom-select-box';
 
 window.$ = $;
 window.jQuery = $;
@@ -23,4 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
    //prettify prices
    onTextChanged(document.querySelectorAll('.lory-item__price'));
    document.querySelectorAll('.lory-item__price').forEach(e => { let tmp = e.innerHTML; e.innerHTML = tmp; });
+
+   //popup custom select
+   customSelect_Init( { preserveQuestionInList: false } );
 });

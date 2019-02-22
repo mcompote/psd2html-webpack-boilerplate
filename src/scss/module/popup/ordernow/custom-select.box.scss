@@ -1,0 +1,63 @@
+@import '../../../modifier/visually-hidden.scss';
+
+
+ /* The container must be positioned relative: */
+ .custom-select {
+
+   position: relative;
+
+   select {
+      @extend .visually-hidden;
+   }
+
+   &__selected {
+     background-color: DodgerBlue;
+
+     &:after {
+      position: absolute;
+      content: "";
+      top: 14px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-color: #fff transparent transparent transparent;
+     }
+
+     /* Point the arrow upwards when the select box is open (active): */
+     &_active:after {
+      border-color: transparent transparent #fff transparent;
+      top: 7px;   
+     }
+   }
+   
+    /* Style items (options): */
+   &__items {
+      position: absolute;
+      background-color: DodgerBlue;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+
+      /* Hide the items when the select box is closed: */
+      &_hide {
+         display: none;
+      }
+   }
+
+
+      /* style the items (options), including the selected item: */
+      &__selected, &__item {
+
+         color: #ffffff;
+         padding: 8px 16px;
+         border: 1px solid transparent;
+         border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+         cursor: pointer;
+      }
+
+      &__item:hover, #{&__item}_same-as-selected {
+         background-color: rgba(0, 0, 0, 0.1);
+      }
+ }

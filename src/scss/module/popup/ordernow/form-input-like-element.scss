@@ -1,0 +1,14 @@
+@mixin form-input-like-element {
+   display: block;
+   width: 100%;
+   min-height: 47px;
+   padding: 14px 31px 17px;
+   margin: 0px auto 24px;
+   border: none;
+   border-radius: 600px;
+
+   background: #F2F4FD;
+   line-height: 14px;
+   font-size: 14px;
+   color: #7D8CC6;
+}
