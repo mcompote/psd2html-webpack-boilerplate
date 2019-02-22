@@ -63,6 +63,11 @@ $zIndex : 99;
       position: relative;
       @include form-input-like-element();
 
+      #{$root}__file-name {
+        margin: 0;
+        padding: 0; 
+      }
+
       #{$root}__file-label {
          @include shift_top_right(5px, 6px);
       }
