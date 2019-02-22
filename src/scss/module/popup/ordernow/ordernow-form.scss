@@ -1,25 +1,37 @@
 @import '../../../variables/media.scss';
 
 @import '../../../mixin/round-corners.scss';
+@import '../../../mixin/abs-shift.scss';
 @import '../../../mixin/media.scss';
+
 @import '../../../util/grid.scss';
+
+@import '../../../modifier/visually-hidden.scss';
+
+
+@import '../../shared/button.scss';
 @import '../ordernow/custom-select.box.scss';
 @import './form-input-like-element.scss';
 
-
+$zIndex : 99;
 
 .form-ordernow {
+   $root : &;
+
    @extend .grid-col--5;
    @include media($mediaSM, $mediaMAX) {
       width: 495px;
    }
    background: cornflowerblue; //TODO: remove lately
-   border: 1px solid salmon; 
+   border: 1px solid salmon;   //TODO: remove lately
    padding: 56px 102px;
    @include round_block(5px);
+
    position: fixed;
    top: 50%;
    left: 50%;
+   z-index: $zIndex;
+
    transform: translate(-50%, -50%);
 
    & &__heading {
@@ -44,5 +56,26 @@
    & &__occupation {
       @include form-input-like-element();
       padding: 0;
+   }
+   
+
+   & &__file-decorative {
+      position: relative;
+      @include form-input-like-element();
+
+      #{$root}__file-label {
+         @include shift_top_right(5px, 6px);
+      }
+   }
+
+   &__file-input {
+      &_hidden {
+         @extend .visually-hidden;
+      }
+   }
+
+   & &__submit {
+      @extend .btn-orig-b2v;
+      margin: 0 auto;
    }
 }
