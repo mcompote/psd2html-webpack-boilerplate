@@ -12,20 +12,29 @@
 /**
  * @param {HTMLElement} rootElement
  */
-function popuppify(rootElement = document.body, options = {}) {
+export function popuppify(rootElement = document.body, options = {}) {
    const POPUP_ROOT_CLS = 'js-popuppify-popup';
    const POPUP_OPEN_CLS = 'js-popuppify-open';
    const POPUP_CLOSE_CLS = 'js-popuppify-close';
    const POPUP_OVERLAY_CLS = 'js-popuppify-overlay';
+   const POPUP_HIDE_CLS = 'js-popuppify-hide';
    const DOT = '.';
 
    if (!rootElement)
       return;
 
-   //find overlay
-   const POPUP_OVERLAY = document.querySelector(DOT + POPUP_OVERLAY_CLS) || generateOverlay();
+
    //copy options to constant
    const POPUP_OPTIONS = options;
+
+   let POPUP_HIDE = POPUP_HIDE_CLS;
+   if (POPUP_OPTIONS) {
+      if( POPUP_OPTIONS.hidingClassName )
+         POPUP_HIDE = POPUP_OPTIONS.hidingClassName;
+   } 
+
+      //find overlay
+      const POPUP_OVERLAY = document.querySelector(DOT + POPUP_OVERLAY_CLS) || generateOverlay();
 
    //find all .popup containers inside root container
    let popups = rootElement.querySelectorAll(DOT + POPUP_ROOT_CLS);
@@ -38,6 +47,8 @@ function popuppify(rootElement = document.body, options = {}) {
       if (!popupRoot)
          return;
 
+      registerHidingCssClass();
+      closePopupAndOverlay(popupRoot, POPUP_OVERLAY); //initial state - hidden
       registerOpenPopupHandlers(popupRoot);
       registerClosePopupHandlers(popupRoot);
       registerPopupFormsHandlers(popupRoot);
@@ -86,39 +97,48 @@ function popuppify(rootElement = document.body, options = {}) {
    }
 
    function closePopupAndOverlay(popupRoot, overlay) {
-      if (popupRoot) {
-         if (options && options.animation && options.animation.fadeOutClasses)
-            options.animation.fadeOutClasses.forEach(cls => popupRoot.classList.add(cls));
 
-         let animationDuration = POPUP_OPTIONS.animation.animationDuration * 1000 || 1000;
+      let delay = 500;
+
+      if (popupRoot) {
+         if (options && options.animation) {
+            if (options.animation.fadeOutClasses)
+               options.animation.fadeOutClasses.forEach(cls => popupRoot.classList.add(cls));
+
+            if (POPUP_OPTIONS.animation.animationDuration)
+               delay = POPUP_OPTIONS.animation.animationDuration * 1000;
+         }
+
          setTimeout(() => {
-            popupRoot.classList.add('none')
-         }, animationDuration);
+            popupRoot.classList.add(POPUP_HIDE)
+         }, delay);
       }
 
       if (overlay) {
-         overlay.classList.add('none');
+         overlay.classList.add(POPUP_HIDE);
       }
    }
 
    function openPopupAndOverlay(popupRoot, overlay) {
       if (popupRoot)
-         if (options && options.animation && options.animation.fadeOutClasses)
-            options.animation.fadeOutClasses.forEach(cls => popupRoot.classList.remove(cls));
-      if (options && options.animation && options.animation.fadeInClasses)
-         options.animation.fadeInClasses.forEach(cls => popupRoot.classList.add(cls));
+         if (options && options.animation) {
+            if( options.animation.fadeOutClasses )
+               options.animation.fadeOutClasses.forEach(cls => popupRoot.classList.remove(cls));            
+            if (options.animation.fadeInClasses)
+               options.animation.fadeInClasses.forEach(cls => popupRoot.classList.add(cls));
+         }
 
-      popupRoot.classList.remove('none');
+      popupRoot.classList.remove(POPUP_HIDE);
 
       if (overlay)
-         overlay.classList.remove('none');
+         overlay.classList.remove(POPUP_HIDE);
    }
 
    /**
     * @param {HTMLElement} popupRoot 
     */
    function registerClosePopupHandlers(popupRoot) {
-      closeButtons = popupRoot.querySelectorAll(DOT + POPUP_CLOSE_CLS);
+      let closeButtons = popupRoot.querySelectorAll(DOT + POPUP_CLOSE_CLS);
       Array.from(closeButtons).forEach(closeBtn => registerCloseButtonHandler(closeBtn));
 
       registerEscKeyboardEvent(popupRoot);
@@ -405,4 +425,37 @@ function popuppify(rootElement = document.body, options = {}) {
    function findForms(rootElement) {
       return Array.from(rootElement.querySelectorAll('form'));
    }
+
+
+   function registerHidingCssClass() {
+      if (POPUP_OPTIONS && POPUP_OPTIONS.hidingClassName) {
+         addHidingClassToDocument(POPUP_OPTIONS.hidingClassName);
+      }
+      else { 
+         addHidingClassToDocument(POPUP_HIDE); 
+      }
+   }
+}
+
+
+
+/**
+ * 
+ * @param {String} hideCls - name of the hiding class, i.e. "none" --> .none {display: none; !important}
+ */
+function addHidingClassToDocument(hideCls) {
+   let css = `.${hideCls} {display: none !important; }`;
+   addStylesToDocument( css );
+}
+
+
+/**
+ * 
+ * @param {String} styles - css-valid classes
+ */
+function addStylesToDocument(styles) {
+   let style = document.createElement('style');
+   style.type = 'text/css';
+   style.innerHTML = styles;
+   document.getElementsByTagName('head')[0].appendChild(style);
 }

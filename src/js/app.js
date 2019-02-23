@@ -4,6 +4,7 @@ import './module/cat';
 import { onTextChanged } from './lib/text-formatting';
 import { init as customSelect_Init} from './lib/custom-select-box';
 import { init as ordernowFormFixes__Init} from './module/ordernow';
+import { popuppify } from './lib/popuppify';
 
 
 window.$ = $;
@@ -30,4 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
    //popup custom select
    customSelect_Init( { preserveQuestionInList: false } );
    ordernowFormFixes__Init();
+
+   popuppify( document.body );
 });

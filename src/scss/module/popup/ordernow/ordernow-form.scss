@@ -11,9 +11,10 @@
 
 @import '../../shared/button.scss';
 @import '../ordernow/custom-select.box.scss';
+@import '../overlay.scss';
 @import './form-input-like-element.scss';
 
-$zIndex : 99;
+$zIndex : $overlayZindex + 1;
 
 .form-ordernow {
    $root : &;

@@ -1,38 +1,42 @@
 <footer>
   
 
-   <form class="form-ordernow" id="ordernow" action="/ordernow" method="post" enctype="multipart/form-data">
-         <button class="btn-close_18px_grey"></button>
-         <h2 class="form-ordernow__heading">Оптовый заказ</h2>
 
-         <label class="visually-hidden" for="ordernow__name">Введите Ваше имя или телефон</label>
-         <input class="form-ordernow__name" id="ordernow__name" type="text" name="ordernow__nameOrPhone" placeholder="Ваш телефон" required>
-
-         <label for="ordernow__email" class="visually-hidden">Введите ваш email</label>
-         <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
-         
-         <div class="form-ordernow__occupation custom-select">
-            <select name="ordernow__occupation" id="ordernow__occupation">
-               <option value="" selected>Ваш род деятельности</option>
-               <option value="Легкоатлет">Легкоатлет</option>
-               <option value="Боксер">Боксер</option>
-               <option value="Бодибилдер">Бодибилдер</option>
-            </select>
-         </div>
-         
-         <div class="form-ordernow__file-decorative">
-            <p class="form-ordernow__file-name">Загрузить файл</p>
-            <label class="form-ordernow__file-label" for="ordernow__file">
-               <button class="btn-circle-purple" type="button"></button>
-            </label>
-            <input class="form-ordernow__file-input form-ordernow__file-input_hidden" id="ordernow__file" type="file" name="ordernow__file">
-         </div>
-
-         <label for="ordernow__law-152-agreement" class="visually-hidden">Введите ваш email</label>
-         <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
-
-         <button class="form-ordernow__submit" type="submit" value="Заказать">Заказать сейчас</button>
-
-   </form>
+   <div class="js-popuppify-popup" data-js-popuppify-name="ordernow">
+         <form class="form-ordernow" id="ordernow" action="/ordernow" method="post" enctype="multipart/form-data">
+            <button class="btn-close_18px_grey js-popuppify-close" type="button"></button>
+            <h2 class="form-ordernow__heading">Оптовый заказ</h2>
+   
+            <label class="visually-hidden" for="ordernow__name">Введите Ваше имя или телефон</label>
+            <input class="form-ordernow__name" id="ordernow__name" type="text" name="ordernow__nameOrPhone" placeholder="Ваш телефон" required>
+   
+            <label for="ordernow__email" class="visually-hidden">Введите ваш email</label>
+            <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+            
+            <div class="form-ordernow__occupation custom-select">
+               <select name="ordernow__occupation" id="ordernow__occupation">
+                  <option value="" selected>Ваш род деятельности</option>
+                  <option value="Легкоатлет">Легкоатлет</option>
+                  <option value="Боксер">Боксер</option>
+                  <option value="Бодибилдер">Бодибилдер</option>
+               </select>
+            </div>
+            
+            <div class="form-ordernow__file-decorative">
+               <p class="form-ordernow__file-name">Загрузить файл</p>
+               <label class="form-ordernow__file-label" for="ordernow__file">
+                  <button class="btn-circle-purple" type="button"></button>
+               </label>
+               <input class="form-ordernow__file-input form-ordernow__file-input_hidden" id="ordernow__file" type="file" name="ordernow__file">
+            </div>
+   
+            <label for="ordernow__law-152-agreement" class="visually-hidden">Введите ваш email</label>
+            <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+   
+            <button class="form-ordernow__submit" type="submit" value="Заказать">Заказать сейчас</button>
+   
+      </form>
+  </div>
+   <div id="overlay" class="overlay js-popuppify-overlay"></div>
 
 </footer>
