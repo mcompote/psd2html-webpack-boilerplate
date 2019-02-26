@@ -84,6 +84,9 @@ $zIndex : $overlayZindex + 1;
       #{$root}__file-name {
          margin: 0;
          padding: 0; 
+         overflow: hidden;
+         text-overflow: ellipsis;
+         max-height: 1.1em;
 
          &_chosen {
             color: #1D1B30;

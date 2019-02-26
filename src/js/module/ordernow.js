@@ -58,15 +58,16 @@ function onDelFileClicked() {
             evt.stopPropagation();
 
             let fileInput = form.querySelector('.' + inputFileCls);
-            let fileINameField = form.querySelector('.' + fileNameFieldCls);
+            let fileNameField = form.querySelector('.' + fileNameFieldCls);
             if (fileInput && fileInput.files && fileInput.files.length) {
                //empty files list for input[type='file']
                fileInput.value = '';
                //empty fileName form field <p class="file-name-field-like"... >  File.txt  </p>
                if( fileNameField ) {
-                  fileINameField.textContent = fileNameFieldPlaceholderLike;
+                  fileNameField.textContent = fileNameFieldPlaceholderLike;
+                  fileNameField.classList.remove(fileNameFieldCls_modifier);
                }
-               //hide del button, show add button
+               //hide del button
                setDelFileButtonVisibility(false);
             }
          });
