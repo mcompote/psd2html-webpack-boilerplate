@@ -1,18 +1,46 @@
-.font {
-    font-size: 20px;
-}
 
 // import DEFAULT font from /assets/fonts/ folder 
 // $defaultFont should be defined in /variables/font.scss
+//Proxima Nova Regular (400)
 @font-face {
     font-family: $defaultFont;
     font-weight: 400;
     src:  local($defaultFont),
           local(str-remove-whitespace($defaultFont)),
-    //TODO: ADD FUNCTION CAMEL2DASHES
-        //   local('Proxima-Nova'),
-          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff2') format('woff2'),
-          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff') format('woff'),
-          url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.ttf') format('truetype');
+          url('/assets/fonts/ProximaNova/#{str-remove-whitespace($defaultFont)}.woff2') format('woff2'),
+          url('/assets/fonts/ProximaNova/#{str-remove-whitespace($defaultFont)}.woff') format('woff'),
+          url('/assets/fonts/ProximaNova/#{str-remove-whitespace($defaultFont)}.ttf') format('truetype');
 }
-    
+
+//Proxima Nova Regular - Bold (700)
+@font-face {
+    font-family: $defaultFont_bold;
+    font-weight: bold;
+    font-style: normal;
+    src:  local('ProximaNova-Bold'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
+}
+
+//Proxima Nova Regular - extraBold (900)
+@font-face {
+    font-family: $defaultFont_extraBold;
+    font-weight: 900;
+    font-style: normal;
+    src:  local('ProximaNova-ExtraBld'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabld.woff2') format('woff2'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabld.woff') format('woff'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabld.ttf') format('truetype');
+}
+
+//Proxima Nova Regular - extraBold italic (900)
+@font-face {
+    font-family: $defaultFont_extraBold;
+    font-weight: 900;
+    font-style: italic;
+    src:  local('ProximaNova-Extrabldit'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabldit.woff2') format('woff2'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabldit.woff') format('woff'),
+          url('/assets/fonts/ProximaNova/ProximaNova-Extrabldit.ttf') format('truetype');
+}

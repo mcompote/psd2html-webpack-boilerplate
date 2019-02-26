@@ -1,3 +1,5 @@
+@import '../../variables/font.scss';
+
 .promo {
    @include flx-r-st-st();
 }
@@ -7,10 +9,17 @@
    box-shadow: 0px 0px 0px 1px rgba(random(), random(), random(), 1); //TODO: remove lately
 
    .promo__heading {
+      position: relative;
+      top: 3px;
+      left: 2px;
       margin: 0;
+      margin-bottom: 30px;
+
+      font-family: $defaultFont_extraBold, $defaulFontFallback, $genericFontFamily;
       line-height: 66px;
       font-size: 64px;
       font-style: italic;
+      font-weight: 900;
       text-transform: uppercase;
    }
 
