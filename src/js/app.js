@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
    onTextChanged(document.querySelectorAll('.lory-item__price'));
    document.querySelectorAll('.lory-item__price').forEach(e => { let tmp = e.innerHTML; e.innerHTML = tmp; });
 
-   //popup custom select
-   customSelect_Init( { preserveQuestionInList: false } );
+   //popup
    ordernowFormFixes__Init();
 
-   popuppify( document.body, { hidingClassName: 'hui'} );
+   popuppify( document.body );
 });

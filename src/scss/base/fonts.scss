@@ -13,6 +13,7 @@
         //   local('Proxima-Nova'),
           url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff2') format('woff2'),
           url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.woff') format('woff'),
+          url('/assets/fonts/#{($defaultFont)}.woff') format('woff'),
           url('/assets/fonts/#{str-remove-whitespace($defaultFont)}.ttf') format('truetype');
 }
     

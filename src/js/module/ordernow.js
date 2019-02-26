@@ -1,3 +1,5 @@
+import {init as customSelect_Init} from '../lib/custom-select-box';
+
 let formCls = 'form-ordernow';
 let addFileBtnCls = formCls + '__file-add';
 let delFileBtnCls = formCls + '__file-del';
@@ -7,6 +9,8 @@ let fileNameFieldCls_modifier = fileNameFieldCls + '_chosen';
 let fileNameFieldPlaceholderLike = "Загрузить файл";
 
 export function init() {
+   customSelect_Init({ preserveQuestionInList: false });  //custom select initialize
+   
    choseFileButtonFix();
    delFileButtonFix();
 

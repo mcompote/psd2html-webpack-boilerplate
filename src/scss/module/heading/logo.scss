@@ -10,9 +10,9 @@
 
       position: relative;
       top: 1px;
-      margin-left: 33px; 
+      margin-left: 15px; 
       
-      &:not(:first-child) {
+      &:not(:first-of-type) {
          margin-left: 4px;
       }
    }
