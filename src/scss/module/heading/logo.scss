@@ -3,6 +3,8 @@
 
 //logo block
 .heading-logo {
+   position: relative;
+   top: 2px;
    @include flx-r-st-st();//flexbox default settings
 
    &__cucumber {
@@ -10,7 +12,7 @@
 
       position: relative;
       top: 1px;
-      margin-left: 15px; 
+      margin-left: 12px; 
       
       &:not(:first-of-type) {
          margin-left: 4px;

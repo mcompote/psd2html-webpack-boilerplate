@@ -18,8 +18,6 @@
       @include flx-r-sb-st();
       padding-top: 35px;
       font-size: 16px;
-
-      background: yellowgreen;//FIXME: remove lately
    }
 
    &_promo {
@@ -35,13 +33,19 @@
 .link-phone:visited,
 .link-phone:active {
    color: white;
-   font-weight: bold;
+   // font-weight: bold;
    text-decoration: none;
 
    letter-spacing: 0.05em;
    text-transform: uppercase;
 }
 
+
+.heading-menu {
+   position: relative;
+   top: 4px;
+   right: 8px;
+}
 
 .heading-menu__list {
    @include nolist();      //list-style: none
@@ -52,12 +56,33 @@
    &, a {
       text-decoration: none;
       color: rgba($color: #fff, $alpha: 0.7);
-      border-bottom: 4px solid transparent; 
-   
-      &:hover, &:active, &_active {
+      border-left: 2px solid transparent; 
+      border-right: 2px solid transparent; 
+   }
+
+   &:hover, &:active, &_active {
          color: white;
-         border-bottom: 4px solid #33FF00;
-      }
+         box-shadow: inset 0px -4px 0px 0px #33FF00;
+   }
+
+   &:nth-of-type(2) {
+      position: relative;
+      right: 5px;
+   }
+
+   &:nth-of-type(3) {
+      position: relative;
+      right: 8px;
+   }
+
+   &:nth-of-type(4) {
+      position: relative;
+      right: 11px;
+   }
+
+   &:nth-of-type(5) {
+      position: relative;
+      right: 12px;
    }
 }
 
