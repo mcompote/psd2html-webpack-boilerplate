@@ -1,19 +1,26 @@
 @import '../../variables/font.scss';
 
+@import '../../mixin/abs-shift.scss';
+
+@import '../shared/scroll-further.scss';
+@import '../shared/button-social.scss';
+
+$promo_zIndex: 2;
+
 .promo {
    @include flx-r-st-st();
 }
 
 
 .promo__info {
-   box-shadow: 0px 0px 0px 1px rgba(random(), random(), random(), 1); //TODO: remove lately
+   position: relative;
 
    .promo__heading {
       position: relative;
       top: 3px;
       left: 2px;
       margin: 0;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
 
       font-family: $defaultFont_extraBold, $defaulFontFallback, $genericFontFamily;
       line-height: 66px;
@@ -24,12 +31,55 @@
    }
 
    .promo__description {
+      margin: 0;
+      margin-bottom: 67px;
+
+      line-height: 24px;
+      font-size: 16px;
       color: #CDD7FD;
+   }
+
+   .scroll-further {
+      @include shift_bottom_left(-255px, -23px);
    }
 }
 
-.promo__photo {
-   box-shadow: 0px 0px 0px 1px rgba(random(), random(), random(), 1); //TODO:remove lately
 
+.promo__photo {
+   position: relative;
+   z-index: $promo_zIndex; //overlay cucumbers
+
+   & > img {
+      min-width: 700px;
+      position: relative;
+      left: -225px;
+      top: -43px;
+   }
+
+   .promo__button-and-text {
+      @include flx-r-st-c();
+      position: absolute;
+      top: 242px;
+      right: 84px;
+      z-index: #{promo_zIndex + 1};
+
+      & .add-to-bag {
+         margin: 0;
+         margin-left: 24px;
+         padding: 0;
+         line-height: 17px;
+         font-size: 12px;
+         letter-spacing: 0.2em;
+         text-transform: uppercase;
+         cursor: pointer;
+      }
    
+      & .add-to-bag_underlined {
+         @include bottom_line(40px, 2px, #33FF00, -5px);
+      }
+   }
+
+   .social {
+      @include shift_bottom_right(-61px, -146px);
+   }
 }
