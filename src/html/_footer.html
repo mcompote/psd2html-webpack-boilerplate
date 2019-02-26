@@ -10,8 +10,10 @@
             <label class="visually-hidden" for="ordernow__name">Введите Ваше имя или телефон</label>
             <input class="form-ordernow__name" id="ordernow__name" type="text" name="ordernow__nameOrPhone" placeholder="Ваш телефон" required>
    
-            <label for="ordernow__email" class="visually-hidden">Введите ваш email</label>
-            <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+            <label class="form-ordernow__email-label" for="ordernow__email" >Введите ваш email
+               <input class="form-ordernow__email-input" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+               <div class="form-ordernow__email-warn"></div>
+            </label>
             
             <div class="form-ordernow__occupation custom-select">
                <select name="ordernow__occupation" id="ordernow__occupation">
@@ -25,18 +27,21 @@
             <div class="form-ordernow__file-decorative">
                <p class="form-ordernow__file-name">Загрузить файл</p>
                <label class="form-ordernow__file-label" for="ordernow__file">
-                  <button class="btn-circle-purple" type="button"></button>
+                  <button class="form-ordernow__file-add btn-circle-purple" type="button"></button>
+                  <button class="form-ordernow__file-del btn-del-purple" type="button">Удалить</button>
                </label>
                <input class="form-ordernow__file-input form-ordernow__file-input_hidden" id="ordernow__file" type="file" name="ordernow__file">
             </div>
    
-            <label for="ordernow__law-152-agreement" class="visually-hidden">Введите ваш email</label>
-            <input class="form-ordernow__email" id="ordernow__email" type="email" name="ordernow__email" placeholder="Ваш email" required>
+            <label class="form-ordernow__law152-label" for="ordernow__law152" >Я согласен на обработку персональных данных
+               <input class="form-ordernow__law152-input" id="ordernow__law152" type="checkbox" name="ordernow__law152" unchecked required>
+               <div class="form-ordernow__checkbox-like"></div>
+            </label>
    
             <button class="form-ordernow__submit" type="submit" value="Заказать">Заказать сейчас</button>
    
       </form>
   </div>
-   <div id="overlay" class="overlay js-popuppify-overlay"></div>
+   <!-- <div id="overlay" class="overlay js-popuppify-overlay"></div> -->
 
 </footer>

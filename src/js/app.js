@@ -32,5 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
    customSelect_Init( { preserveQuestionInList: false } );
    ordernowFormFixes__Init();
 
-   popuppify( document.body );
+   popuppify( document.body, { hidingClassName: 'hui'} );
 });

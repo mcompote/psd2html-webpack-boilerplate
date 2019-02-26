@@ -1,6 +1,7 @@
 @import '../../../variables/media.scss';
 
 @import '../../../mixin/round-corners.scss';
+@import '../../../mixin/dimensions.scss';
 @import '../../../mixin/abs-shift.scss';
 @import '../../../mixin/media.scss';
 
@@ -23,8 +24,7 @@ $zIndex : $overlayZindex + 1;
    @include media($mediaSM, $mediaMAX) {
       width: 495px;
    }
-   background: cornflowerblue; //TODO: remove lately
-   border: 1px solid salmon;   //TODO: remove lately
+   background: #fff;
    padding: 56px 102px;
    @include round_block(5px);
 
@@ -50,8 +50,25 @@ $zIndex : $overlayZindex + 1;
       @include form-input-like-element();
    }
 
-   & &__email {
+   & &__email-label {
+      display: block;
+      position: relative;
+      font-size: 0;
+   }
+
+   & &__email-input {
       @include form-input-like-element();
+
+      &:invalid {
+         color: #C10017;
+      }
+
+      &:invalid + #{$root}__email-warn {
+         @extend .btn;
+         @include shift_top_right(15px, 21px);
+         @include set_w_h(18px, 15px);
+         background: url('data:image/svg+xml;utf-8,%3Csvg%20width%3D%2218%22%20height%3D%2215%22%20viewBox%3D%220%200%2018%2015%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.158394%2013.3607L8.05555%200.522848C8.25513%200.198394%208.61348%200%209.00003%200C9.38657%200%209.74492%200.19836%209.9445%200.522848L17.8416%2013.3607C18.047%2013.6946%2018.0531%2014.1111%2017.8574%2014.4505C17.6618%2014.7901%2017.2949%2015%2016.8971%2015H1.10287C0.705109%2015%200.338182%2014.79%200.142572%2014.4505C-0.0530357%2014.111%20-0.0469894%2013.6946%200.158394%2013.3607ZM8.99412%204.44076C8.54057%204.44076%208.1568%204.69157%208.1568%205.13612C8.1568%206.49262%208.31961%208.44197%208.31961%209.79847C8.31961%2010.1519%208.71501%2010.3%208.99412%2010.3C9.36621%2010.3%209.68023%2010.1518%209.68023%209.79847C9.68023%208.44197%209.843%206.49262%209.843%205.13612C9.843%204.69157%209.47091%204.44076%208.99412%204.44076ZM8.98248%2012.8421C9.49415%2012.8421%209.87795%2012.4318%209.87795%2011.9644C9.87795%2011.4856%209.49418%2011.0867%208.98248%2011.0867C8.50569%2011.0867%208.09865%2011.4856%208.09865%2011.9644C8.09865%2012.4318%208.50569%2012.8421%208.98248%2012.8421Z%22%20fill%3D%22%23C10017%22%2F%3E%3C%2Fsvg%3E')
+      }
    }
    
    & &__occupation {
@@ -59,25 +76,65 @@ $zIndex : $overlayZindex + 1;
       padding: 0;
    }
    
-
+   
    & &__file-decorative {
       position: relative;
       @include form-input-like-element();
-
+      
       #{$root}__file-name {
-        margin: 0;
-        padding: 0; 
+         margin: 0;
+         padding: 0; 
+
+         &_chosen {
+            color: #1D1B30;
+         }
+      }
+      
+      #{$root}__file-add {
+         @include shift_top_right(5px, 6px);
       }
 
-      #{$root}__file-label {
+      #{$root}__file-del {
          @include shift_top_right(5px, 6px);
       }
    }
-
+   
    &__file-input {
       &_hidden {
          @extend .visually-hidden;
       }
+   }
+
+   & &__law152-label {
+      position: relative;
+      @extend .btn;
+      width: 100%;
+
+      padding-left: 27px;
+      margin-bottom: 35px;
+
+      min-height: 32px;
+      line-height: 20px;
+      font-size: 14px;
+      color: #7D8CC6;
+
+      & #{$root}__law152-input {
+         @extend .visually-hidden;
+
+         &:checked + #{$root}__checkbox-like {
+            background: url('data:image/svg+xml;utf-8,%3Csvg%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2218%22%20height%3D%2218%22%20rx%3D%224%22%20fill%3D%22%238F00FF%22%2F%3E%3Cpath%20d%3D%22M4.11538%209.85C4.03846%209.78%204%209.675%204%209.605C4%209.535%204.03846%209.43%204.11538%209.36L4.65385%208.87C4.80769%208.73%205.03846%208.73%205.19231%208.87L5.23077%208.905L7.34615%2010.97C7.42308%2011.04%207.53846%2011.04%207.61538%2010.97L12.7692%206.105H12.8077C12.9615%205.965%2013.1923%205.965%2013.3462%206.105L13.8846%206.595C14.0385%206.735%2014.0385%206.945%2013.8846%207.085L7.73077%2012.895C7.65385%2012.965%207.57692%2013%207.46154%2013C7.34615%2013%207.26923%2012.965%207.19231%2012.895L4.19231%209.955L4.11538%209.85Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E');
+         }
+      }
+
+      &  #{$root}__checkbox-like {
+         @extend .btn;
+         @include shift_top_left(0px, -1px);
+         @include square(18px);
+         background: #F2F4FD;
+         border-radius: 3px;
+         box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.05);   
+      }
+
    }
 
    & &__submit {

@@ -1,3 +1,4 @@
+@import '../../variables/font.scss';
 @import "../../mixin/round-corners.scss";
 @import "../../mixin/plus-sign.scss";
 @import "../../mixin/color.scss";
@@ -62,8 +63,21 @@
    @extend .btn;
    @extend .btn-circle;
    @include fill(#8F00FF);
-   @include set_width_height(36px, 36px);
+   @include square(36px);
    @include plus_at_center(11px, 1.5px, 10px, #fff);
+}
+
+.btn-del-purple {
+   @extend .btn;
+   @include round_block(600px);
+   @include fill(#8F00FF);
+   @include set_w_h(102px, 36px);
+   @include flx-r-c-c();       //flexbox, align - center
+
+   line-height: 21px;
+   font-size: 14px;
+   font-family: $defaultFont, $defaulFontFallback, $genericFontFamily;
+   color: #FFFFFF;
 }
 
 

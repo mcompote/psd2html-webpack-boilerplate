@@ -11,4 +11,10 @@
    line-height: 14px;
    font-size: 14px;
    color: #7D8CC6;
+
+   &::placeholder {
+      line-height: 14px;
+      font-size: 14px;
+      color: #7D8CC6;
+   }
 }

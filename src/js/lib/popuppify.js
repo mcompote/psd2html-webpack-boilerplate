@@ -33,8 +33,8 @@ export function popuppify(rootElement = document.body, options = {}) {
          POPUP_HIDE = POPUP_OPTIONS.hidingClassName;
    } 
 
-      //find overlay
-      const POPUP_OVERLAY = document.querySelector(DOT + POPUP_OVERLAY_CLS) || generateOverlay();
+   //find overlay otherwise generate it
+   const POPUP_OVERLAY = document.querySelector(DOT + POPUP_OVERLAY_CLS) || generateOverlay();
 
    //find all .popup containers inside root container
    let popups = rootElement.querySelectorAll(DOT + POPUP_ROOT_CLS);
@@ -98,7 +98,7 @@ export function popuppify(rootElement = document.body, options = {}) {
 
    function closePopupAndOverlay(popupRoot, overlay) {
 
-      let delay = 500;
+      let delay = 200;
 
       if (popupRoot) {
          if (options && options.animation) {
@@ -416,7 +416,22 @@ export function popuppify(rootElement = document.body, options = {}) {
    }
 
    function generateOverlay() {
-      //TODO: generate overlay HTML markup + css, add to <body>, return link to element
+      let cssStyles = `.js-popuppify-generated-cls-overlay {
+         display: block;
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 100;
+         background: #1A032B;
+         opacity: 0.9;
+      }`;
+      addStylesToDocument(cssStyles);
+      let div = document.createElement('div');
+      div.setAttribute('class', 'js-popuppify-generated-cls-overlay js-popuppify-overlay');
+      document.body.appendChild(div);
+      return div;
    }
 
    /**
