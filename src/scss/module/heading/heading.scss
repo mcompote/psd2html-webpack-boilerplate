@@ -7,6 +7,8 @@
 
 //heading block
 .heading {
+   $root: &;
+
    overflow: hidden;
    background: linear-gradient(121.88deg, #00B3FF -0.35%, #8F00FF 100%);
    color: white;
@@ -23,7 +25,20 @@
          left: 0;
          top: 0;
          content: url('/assets/img/abstract.png');
-         opacity:0.4;
+         opacity:1;
+      }
+
+      & #{$root}__cucumbers {
+         @include flx-r-st-st();
+         position: absolute;
+         top: 12px;
+         right: 3px;
+         z-index: -2;
+         opacity: 0.15;
+      
+         & [class^="cucumber"]  {
+            margin-left: 86px;
+         }
       }
    }
 }
@@ -111,12 +126,3 @@
    }
 }
 
-.heading__cucumbers {
-   position: absolute;
-   right: 0;
-   @include flx-r-st-st();
-
-   & [class^="cucumber"]  {
-      margin-right: 40px;
-   }
-}

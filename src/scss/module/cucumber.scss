@@ -2,8 +2,8 @@
 @import '../mixin/color.scss';
 @import '../mixin/round-corners.scss';
 
-$cucumberLgWidth  : 146px;
-$cucumberLgHeight : 406px;
+$cucumberLgWidth  : 130px;
+$cucumberLgHeight : 421px;
 
 $cucumberSmWidth  : 5px;
 $cucumberSmHeight : 16px;
@@ -21,11 +21,12 @@ $cucumberSmHeight : 16px;
 
 @mixin cucumber_grad($width, $height, $lg...) {
    @include cucumber($width, $height);
+   background: $lg;
+
    // &::after {
    //    content: quote(length($list: $lg)); 
    // }
-   // @include colorize_bg(unquote($lg))
-   background: $lg;
+   //@include colorize_bg(unquote($lg))
 }
 
 
@@ -35,20 +36,6 @@ $cucumberSmHeight : 16px;
 
 .cucumber-lg {
    @include cucumber_grad($cucumberLgWidth, $cucumberLgHeight, linear-gradient(269deg, #33FF00 3.17%, #CCFF00 99.06%) );
-   opacity: 0.15;
 }
-
-// .cucumber-lg-l {
-//    @include cucumber_grad($cucumberLgWidth, $cucumberLgHeight, linear-gradient(to bottom, #A068E1 3.17%, #715CDE 99.06%) );
-// }
-
-// .cucumber-lg-c {
-//    @include cucumber_grad($cucumberLgWidth, $cucumberLgHeight, linear-gradient(to bottom, #8372EB 3.17%, #8761E0 99.06%) );
-// }
-
-// .cucumber-lg-r {
-//    @include cucumber_grad($cucumberLgWidth, $cucumberLgHeight, linear-gradient(to bottom, #986DEB 3.17%, #A268E1 99.06%) );
-// }
-
 
 
