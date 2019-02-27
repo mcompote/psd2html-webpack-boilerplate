@@ -1,2 +1,122 @@
+@import '../../variables/font.scss';
+
 @import './logo.scss';
 @import './promo.scss';
+
+
+
+//heading block
+.heading {
+   overflow: hidden;
+   background: linear-gradient(121.88deg, #00B3FF -0.35%, #8F00FF 100%);
+   color: white;
+   
+   &.heading_index {
+      position: relative;
+      min-height: 900px;
+      z-index: 1; //for additional background image with alpha < 1.0
+
+      &::before {
+         z-index: -1;
+         position: absolute;
+         width: 100%;
+         left: 0;
+         top: 0;
+         content: url('/assets/img/abstract.png');
+         opacity:0.4;
+      }
+   }
+}
+
+
+.heading__row {
+   padding-left: 146.5px;
+   padding-right: 146.5px;
+
+   
+   &_menu {
+      @include flx-r-sb-st();
+      padding-top: 35px;
+      font-size: 16px;
+   }
+
+   &_promo {
+      @include flx-r-st-st();
+      position: relative; //for cucumbers
+      // background: rgba(255, 100, 100, 0.3);  //TODO: REMOVE LATELY
+   }
+}
+
+
+
+.link-phone, 
+.link-phone:visited,
+.link-phone:active {
+   position: relative;
+   top: 4px;
+   left: 1px;
+
+   color: white;
+   font-family: $defaultFont_extraBold, Arial, sans-serif;
+   font-weight: 900;
+   font-size: 16px;
+   text-decoration: none;
+   letter-spacing: 0.06em;
+   text-transform: uppercase;
+}
+
+
+.heading-menu {
+   position: relative;
+   top: 4px;
+   right: 3px;
+}
+
+.heading-menu__list {
+   @include nolist();      //list-style: none
+   @include flx-r-st-st(); //display: flex
+}
+
+.heading-menu__item {
+   &, a {
+      text-decoration: none;
+      color: rgba($color: #fff, $alpha: 0.7);
+      border-left: 2px solid transparent; 
+      border-right: 2px solid transparent; 
+   }
+
+   &:hover, &:active, &_active {
+         color: white;
+         box-shadow: inset 0px -4px 0px 0px #33FF00;
+   }
+
+   &:nth-of-type(2) {
+      position: relative;
+      right: 5px;
+   }
+
+   &:nth-of-type(3) {
+      position: relative;
+      right: 8px;
+   }
+
+   &:nth-of-type(4) {
+      position: relative;
+      right: 11px;
+   }
+
+   &:nth-of-type(5) {
+      position: relative;
+      right: 12px;
+   }
+}
+
+.heading__cucumbers {
+   position: absolute;
+   right: 0;
+   @include flx-r-st-st();
+
+   & [class^="cucumber"]  {
+      margin-right: 40px;
+   }
+}
