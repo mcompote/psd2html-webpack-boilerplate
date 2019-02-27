@@ -1,35 +1,25 @@
-import $ from 'jquery';
-import { lory } from 'lory.js';
-import './module/cat';
+import { init as lory_with_dots_Init } from './module/slider/lory-nav-items';
 import { onTextChanged } from './lib/text-formatting';
 import { init as customSelect_Init} from './lib/custom-select-box';
-import { init as ordernowFormFixes__Init} from './module/ordernow';
+import { init as ordernowFormFixes_Init} from './module/ordernow';
 import { popuppify } from './lib/popuppify';
-
-
-window.$ = $;
-window.jQuery = $;
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-   const slider = document.querySelector('.js_slider');
-
+   
    //initialize slider
-   lory(slider, {
-      rewind: true,
-      slidesToScroll: 3,
-      slideSpeed: 1000,
-      ease: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)',
-   });
+   const slider = document.querySelector('.js_slider');
+   lory_with_dots_Init();
+
 
    //prettify prices
    onTextChanged(document.querySelectorAll('.lory-item__price'));
    document.querySelectorAll('.lory-item__price').forEach(e => { let tmp = e.innerHTML; e.innerHTML = tmp; });
 
    //popup
-   ordernowFormFixes__Init();
+   ordernowFormFixes_Init();
 
    popuppify( document.body );
 });

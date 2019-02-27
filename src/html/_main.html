@@ -1,5 +1,4 @@
 <main class="main">
-   <h2 class="visually-hidden">Модельный ряд кроссовок и их стоимость</h2>
    <h2 class="main__heading">Все модели</h2>
    <!-- FIXME: не хочет грузить рекурсивно кусок HTML-кода, придется тут разметку слайдера делать -->
    <!-- REQUIRE('html-loader!./_slider.html') -->
@@ -10,7 +9,10 @@
 
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-1-orange.png" alt="" srcset="">
+                  <div class="lory-item__photo-container">
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-1-orange.png" alt=""
+                        srcset="">
+                  </div>
                   <div class="lory-item__name">Air Jordan 1 Retro High OG
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -21,7 +23,10 @@
             </li>
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-2-blue.png" alt="" srcset="">
+                  <div class="lory-item__photo-container">
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-2-blue.png" alt=""
+                        srcset="">
+                  </div>
                   <div class="lory-item__name">Air Jordan 2 Retro High OG
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -32,7 +37,11 @@
             </li>
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-1-black.png" alt="" srcset="">
+                  <div class="lory-item__photo-container">
+
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/Air-Jordan-1-black.png" alt=""
+                        srcset="">
+                  </div>
                   <div class="lory-item__name">Air Jordan 1 Retro High OG
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -44,8 +53,12 @@
             <!-- шаблоны-пустышки -->
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt="" srcset=""
-                     width="100" height="100">
+                  <div class="lory-item__photo-container">
+
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt=""
+                        srcset="" width="100" height="100">
+                  </div>
+
                   <div class="lory-item__name">Nike unnamed
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -57,8 +70,10 @@
 
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt="" srcset=""
-                     width="100" height="100">
+                  <div class="lory-item__photo-container">
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt=""
+                        srcset="" width="100" height="100">
+                  </div>
                   <div class="lory-item__name">Nike unnamed
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -70,8 +85,10 @@
 
             <li class="lory__slide js_slide">
                <div class="lory__item lory-item">
-                  <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt="" srcset=""
-                     width="100" height="100">
+                  <div class="lory-item__photo-container">
+                     <img class="lory-item__photo" src="/assets/img/goods/slider/yet_another_snicker.svg" alt=""
+                        srcset="" width="100" height="100">
+                  </div>
                   <div class="lory-item__name">Nike unnamed
                      <span class="lory-item__info">Описание товара</span>
                      <p class="lory-item__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
@@ -86,21 +103,18 @@
 
       <div class="lory__controls">
          <span class="js_prev prev">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5">
-               <g>
-                  <path fill="#2E435A"
-                     d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z" />
-               </g>
-            </svg>
+               <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.5346 23.7517C11.7021 23.9172 11.9114 24 12.1417 24C12.372 24 12.5813 23.9172 12.7488 23.7517C13.0837 23.4207 13.0837 22.8828 12.7488 22.5517L2.07246 12L12.7488 1.44828C13.0837 1.11724 13.0837 0.57931 12.7488 0.248276C12.4138 -0.0827586 11.8696 -0.0827586 11.5346 0.248276L0.251208 11.4C-0.0837355 11.731 -0.0837355 12.269 0.251208 12.6L11.5346 23.7517Z" fill="#CDD7FD"/>
+               </svg>                  
          </span>
          <span class="js_next next">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5">
-               <g>
-                  <path fill="#2E435A"
-                     d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z" />
-               </g>
-            </svg>
+               <svg width="13" height="24" viewBox="0 0 13 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.46538 23.7517C1.29791 23.9172 1.08857 24 0.858293 24C0.62802 24 0.41868 23.9172 0.251208 23.7517C-0.0837359 23.4207 -0.0837359 22.8828 0.251208 22.5517L10.9275 12L0.251208 1.44828C-0.0837359 1.11724 -0.0837359 0.57931 0.251208 0.248276C0.586151 -0.0827586 1.13044 -0.0827586 1.46538 0.248276L12.7488 11.4C13.0837 11.731 13.0837 12.269 12.7488 12.6L1.46538 23.7517Z" fill="#CDD7FD"/>
+               </svg>                  
          </span>
+
+         <ul class="js_dots dots">
+         </ul>
       </div>
    </div>
 </main>

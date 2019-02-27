@@ -1,3 +1,5 @@
+@import '../../variables/font.scss';
+
 @import '../../mixin/flexbox.scss';
 @import '../../mixin/abs-shift.scss';
 @import '../../mixin/dimensions.scss';
@@ -10,8 +12,16 @@
 
    $parent : &;
    
-   &__photo {
+   &__photo-container {
+      @include flx-c-en-c();
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
       margin: 0px auto 30px;
+
+      #{$parent}__photo {
+         margin: 0 auto;
+      }
    }
    
    &__name {
@@ -19,6 +29,7 @@
       margin: 0 auto 10px;
       line-height: 19px;
       font-size: 18px;
+      font-family: $defaultFont_bold, Arial, sans-serif;
       text-align: center;
       color: #1D1B30;
    }

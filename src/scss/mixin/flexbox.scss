@@ -37,6 +37,11 @@
    @include flx($axisDirection: column, $justifyContent: flex-start, $alignItems: center);
 }
 
+// flex-direction: column, justify-content: flex-end, align-items: center
+@mixin flx-c-en-c {
+   @include flx($axisDirection: column, $justifyContent: flex-end, $alignItems: center);
+}
+
 // flex-direction: column, justify-content: flex-start, align-items: center
 @mixin flx-c-st-st {
    @include flx($axisDirection: column, $justifyContent: flex-start, $alignItems: flex-start);
