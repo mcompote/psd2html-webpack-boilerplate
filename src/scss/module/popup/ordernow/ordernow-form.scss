@@ -11,6 +11,7 @@
 
 
 @import '../../shared/button.scss';
+@import '../../shared/button-close.scss';
 @import '../ordernow/custom-select.box.scss';
 @import '../overlay.scss';
 @import './form-input-like-element.scss';
@@ -35,15 +36,22 @@ $zIndex : $overlayZindex + 1;
 
    transform: translate(-50%, -50%);
 
+
+   & &__close {
+      @extend .btn-close_18px_grey;
+   }
+
    & &__heading {
-      line-height: 25px;
-      font-size: 24px;
+      margin-bottom: 40px;
+      
+      color: #000000;
       text-align: center;
       text-transform: uppercase;
-      color: #000000;
+      line-height: 25px;
+      font-size: 24px;
+      font-weight: 900;
       font-style: italic;
-
-      margin-bottom: 40px;
+      font-family: $defaultFont_extraBold, $defaulFontFallback, $genericFontFamily;
    }
 
    & &__name {
@@ -56,14 +64,14 @@ $zIndex : $overlayZindex + 1;
       font-size: 0;
    }
 
-   & &__email-input {
+   & &__email-input, & &__email-input:invalid {
       @include form-input-like-element();
 
-      &:invalid {
+      &_invalid {
          color: #C10017;
       }
 
-      &:invalid + #{$root}__email-warn {
+      &_invalid + #{$root}__email-warn {
          @extend .btn;
          @include shift_top_right(15px, 21px);
          @include set_w_h(18px, 15px);

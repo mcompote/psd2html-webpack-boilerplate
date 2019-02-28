@@ -1,5 +1,6 @@
 import { lory } from 'lory.js';
-import {} from '../../lib/inject-css';
+import { onTextChanged } from '../../lib/text-formatting';
+import { init as popups_fix } from './lory-popup-fix';
 
 export function init() {
    let loryInstance;
@@ -56,5 +57,13 @@ export function init() {
     enableMouseEvents: true
   });
 
+  //trying to avoid navigation bug
   setTimeout( () => { loryInstance.prev(); } , 100 );
+
+  //add mutation observer to description popups
+  popups_fix();
+
+   //prettify prices
+   onTextChanged(document.querySelectorAll('.lory-item__price'));
+   document.querySelectorAll('.lory-item__price').forEach(e => { let tmp = e.innerHTML; e.innerHTML = tmp; });
 }

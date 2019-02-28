@@ -19,3 +19,13 @@ export function addHidingClassToDocument(hideCls) {
    let css = `.${hideCls} {display: none !important; }`;
    addStylesToDocument( css );
 }
+
+// source: https://stackoverflow.com/questions/5296622/how-can-i-grab-all-css-styles-of-an-element
+export function dumpCSSText(element) {
+   var s = '';
+   var o = getComputedStyle(element);
+   for (var i = 0; i < o.length; i++) {
+      s += o[i] + ':' + o.getPropertyValue(o[i]) + ';';
+   }
+   return s;
+}
