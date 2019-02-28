@@ -6,7 +6,6 @@ $svgIcon_encoded :  "%3Csvg%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%
 
 .btn-info {
    @extend .btn;
-   @include shift_top_right(0px, -28px);
    @include square(18px);
    background: url('data:image/svg+xml,#{$svgIcon_encoded}');
    font-size: 0;

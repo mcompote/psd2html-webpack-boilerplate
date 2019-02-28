@@ -32,6 +32,11 @@
    @include flx($axisDirection: row, $justifyContent: center, $alignItems: center);
 }
 
+// flex-direction: row, justify-content: center, align-items: center
+@mixin flx-r-c-st {
+   @include flx($axisDirection: row, $justifyContent: center, $alignItems: flex-start);
+}
+
 // flex-direction: column, justify-content: flex-start, align-items: center
 @mixin flx-c-st-c {
    @include flx($axisDirection: column, $justifyContent: flex-start, $alignItems: center);

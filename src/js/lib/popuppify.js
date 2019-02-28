@@ -1,13 +1,14 @@
 // // usage example:
 // // popuppify(document.body, {
-// //    animation: {
-// //       fadeInClasses: ['animation-fade-in'],
-// //       fadeOutClasses: ['animation-fade-out'],
-// //       animationDuration: 0.1
-// //    },
+   // //    animation: {
+      // //       fadeInClasses: ['animation-fade-in'],
+      // //       fadeOutClasses: ['animation-fade-out'],
+      // //       animationDuration: 0.1
+      // //    },
 // //    memorizeFormInputsValues: true
 // // });
 
+import { addStylesToDocument, addHidingClassToDocument } from './inject-css';
 
 /**
  * @param {HTMLElement} rootElement
@@ -450,27 +451,4 @@ export function popuppify(rootElement = document.body, options = {}) {
          addHidingClassToDocument(POPUP_HIDE); 
       }
    }
-}
-
-
-
-/**
- * 
- * @param {String} hideCls - name of the hiding class, i.e. "none" --> .none {display: none; !important}
- */
-function addHidingClassToDocument(hideCls) {
-   let css = `.${hideCls} {display: none !important; }`;
-   addStylesToDocument( css );
-}
-
-
-/**
- * 
- * @param {String} styles - css-valid classes
- */
-function addStylesToDocument(styles) {
-   let style = document.createElement('style');
-   style.type = 'text/css';
-   style.innerHTML = styles;
-   document.getElementsByTagName('head')[0].appendChild(style);
 }
