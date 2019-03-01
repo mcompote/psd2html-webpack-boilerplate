@@ -1,4 +1,5 @@
 @import '../../variables/font.scss';
+
 @import "../../mixin/round-corners.scss";
 @import "../../mixin/plus-sign.scss";
 @import "../../mixin/color.scss";
@@ -6,7 +7,7 @@
 .btn {
    display: block;
    cursor: pointer;
-   border: none !important;
+   border: none;
 }
 
 .btn-circle {
