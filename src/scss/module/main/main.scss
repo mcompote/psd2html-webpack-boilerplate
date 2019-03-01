@@ -1,5 +1,5 @@
 
-@import '../variables/font.scss';
+@import '../../variables/font.scss';
 
 .main {
    padding: 88px 147px 0px;
@@ -10,7 +10,7 @@
       text-align: center;
       line-height: 41px;
       font-size: 40px;
-      font-family: $defaultFont_bold, Arial, sans-serif;;
+      font-family: $defaultFont_bold, $defaulFontFallback, $genericFontFamily;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: #162E0E;

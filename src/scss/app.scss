@@ -24,12 +24,9 @@
 @import 'base/fonts';
 @import 'base/base';
 
+
 @import 'module/heading/heading.scss';
+@import 'module/main/main.scss';
 @import 'module/lory-slider/lory-slider.scss';
-@import 'module/popup/overlay.scss';
+// @import 'module/popup/overlay.scss';   //overlay is generated via js
 @import 'module/popup/ordernow/ordernow-form.scss';
-
-
-//FIXME: remove lately
-@import 'oldstyle-css-to-remove/trash.scss'
-

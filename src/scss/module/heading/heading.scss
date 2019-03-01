@@ -58,7 +58,6 @@
    &_promo {
       @include flx-r-st-st();
       position: relative; //for cucumbers
-      // background: rgba(255, 100, 100, 0.3);  //TODO: REMOVE LATELY
    }
 }
 
@@ -72,7 +71,7 @@
    left: 1px;
 
    color: white;
-   font-family: $defaultFont_extraBold, Arial, sans-serif;
+   font-family: $defaultFont_extraBold, $defaulFontFallback, $genericFontFamily;
    font-weight: 900;
    font-size: 16px;
    text-decoration: none;
