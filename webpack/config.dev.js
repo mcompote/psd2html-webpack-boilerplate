@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require('multer');
 const fs = require('fs');
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -46,6 +47,14 @@ module.exports = {
         before: function (app) {
             app.use('/assets', express.static('./src/assets'));
             app.use('/img', express.static('./src/assets/img'));
+
+            let storage = multer.memoryStorage();
+            let upload = multer({ storage: storage });
+            app.post('/ordernow', upload.single('ordernow__file'), function (req, res, next) {
+                console.log(req.file);
+                console.log(req.body);
+                res.send({ status: 'ok', reponse: req.body, fileSize: req.file.buffer.length } );
+            });
         }
     },
     plugins: getPlugins(),

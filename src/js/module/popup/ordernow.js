@@ -1,10 +1,13 @@
 import {init as customSelect_Init} from '../../lib/custom-select-box';
 import {init as emailInputFix_Init} from './email-input-fix';
+import 'axios';
+import Axios from 'axios';
 
-let formCls = 'form-ordernow';
-let addFileBtnCls = formCls + '__file-add';
-let delFileBtnCls = formCls + '__file-del';
-let inputFileCls =  formCls + '__file-input';
+let formCls          = 'form-ordernow';
+let addFileBtnCls    = formCls + '__file-add';
+let delFileBtnCls    = formCls + '__file-del';
+let submitFileBtnCls = formCls + '__submit';
+let inputFileCls     = formCls + '__file-input';
 let fileNameFieldCls = formCls + '__file-name';
 let fileNameFieldCls_modifier = fileNameFieldCls + '_chosen';
 let fileNameFieldPlaceholderLike = "Загрузить файл";
@@ -19,6 +22,8 @@ export function init() {
 
    onInputFileChanged();
    onDelFileClicked();
+
+   onSubmit();
 }
 
 function choseFileButtonFix() {
@@ -131,4 +136,45 @@ function setElementProperty(element, propName, propVal) {
 function setElementVisibility(element, visibility = true) {
    let displayValue = visibility ? 'block' : 'none';
    setElementProperty(element, 'display', displayValue);
+}
+
+
+function onSubmit() {
+   let form = document.querySelector('.' + formCls);
+   if (form) {
+
+      let submitBtn = form.querySelector('.' + submitFileBtnCls);
+      if (submitBtn) {
+
+         submitBtn.addEventListener('click', evt => {
+            evt.preventDefault();
+            evt.stopPropagation();
+            
+
+            let formData = new FormData();
+            let imagefile = form.querySelector('.' + inputFileCls);
+            formData.append('ordernow__file', imagefile.files[0])
+          
+            let data = {
+              name: form.querySelector('#ordernow__name' ).value,
+              mail: form.querySelector('#ordernow__email' ).value,
+              occupation: form.querySelector('#ordernow__occupation' ).value,
+              agree: form.querySelector('#ordernow__law152' ).value,
+              ultimateAnswer: 42
+            }
+
+            formData.append('data', JSON.stringify(data));
+          
+            Axios.post('/ordernow', formData)
+            .then(function (response) {
+              alert(response);
+              //etc...
+            })
+            .catch(function (error) {
+              alert(error);
+            })
+
+         });
+      }
+   }   
 }
