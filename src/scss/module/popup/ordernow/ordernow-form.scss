@@ -37,11 +37,11 @@ $zIndex : $overlayZindex + 1;
    transform: translate(-50%, -50%);
 
 
-   & &__close {
+   &__close {
       @extend .btn-close_18px_grey;
    }
 
-   & &__heading {
+   &__heading {
       margin-bottom: 40px;
       
       color: #000000;
@@ -54,24 +54,32 @@ $zIndex : $overlayZindex + 1;
       font-family: $defaultFont_extraBold, $defaulFontFallback, $genericFontFamily;
    }
 
-   & &__name {
+   &__name {
       @include form-input-like-element();
    }
 
-   & &__email-label {
+   &__email-label {
       display: block;
       position: relative;
       font-size: 0;
    }
 
-   & &__email-input, & &__email-input:invalid {
+   &__email-input {
       @include form-input-like-element();
+      
+      &:invalid {
+         @include form-input-like-element();
+      }
 
-      &_invalid {
+      &_invalid, &_invalid:invalid {
          color: #C10017;
       }
 
-      &_invalid + #{$root}__email-warn {
+      & + #{$root}__email-warn { 
+         display: none;
+      }
+
+      &#{&}_invalid + #{$root}__email-warn {
          @extend .btn;
          @include shift_top_right(15px, 21px);
          @include set_w_h(18px, 15px);
@@ -79,13 +87,13 @@ $zIndex : $overlayZindex + 1;
       }
    }
    
-   & &__occupation {
+   &__occupation {
       @include form-input-like-element();
       padding: 0;
    }
    
    
-   & &__file-decorative {
+   &__file-decorative {
       position: relative;
       @include form-input-like-element();
       
@@ -116,7 +124,7 @@ $zIndex : $overlayZindex + 1;
       }
    }
 
-   & &__law152-label {
+   &__law152-label {
       position: relative;
       @extend .btn;
       width: 100%;
@@ -148,7 +156,7 @@ $zIndex : $overlayZindex + 1;
 
    }
 
-   & &__submit {
+   &__submit {
       @extend .btn-orig-b2v;
       margin: 0 auto;
    }
